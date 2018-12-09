@@ -1,0 +1,14 @@
+{% extends "index.html" %}
+
+{% block page_content %}
+
+
+<div class="container-fluid">
+    <h1 class="display-4">Write a message to:</h1>
+    {% for user in contacts %}
+        {% if user.name != "" and user.email != "" %}
+         <a> <p>{{ user.name }}</p> </a> <a href="{{ user.key.id() }}"><button type="button" class="btn btn-primary">Send</button></a>
+        {% endif %}
+    {% endfor %}
+</div>
+{% endblock page_content %}

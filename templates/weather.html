@@ -1,0 +1,11 @@
+{% extends "index.html" %}
+
+{% block page_content %}
+<div class="container-fluid">
+    <h2 class="display-4">Weather in location {{ weather_info.name }}</h2>
+
+    <p class="pt-4">Description: {{ weather_info.weather[0].description }}</p>
+    <p>Current temperature: {{ weather_info.main.temp }} degrees Celsius</p>
+    <img src="forecast.png" class="img-fluid py-4 pt-4">
+</div>
+{% endblock page_content %}

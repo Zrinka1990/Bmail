@@ -1,0 +1,16 @@
+{% extends "index.html" %}
+
+{% block page_content %}
+<div class="container-fluid">
+    <h3>To: </h3>
+    <p> {{ receiver.name }}, {{ receiver.email}} </p>
+    <h3>From: </h3>
+    <p> {{ sender.name }}, {{ sender.email }} </p>
+    <h3>Subject: </h3>
+    <p>{{ new_message.title }}</p>
+    <h3>Message text: </h3>
+    <p> {{ new_message.message_text }} </p>
+    <p> {{ new_message.created }} </p>
+    <a href="/"><button type="button" class="btn btn-primary">Close</button></a>
+</div>
+{% endblock page_content %}

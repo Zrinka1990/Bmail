@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="assets/bootstrap.css" type="text/css">
+    <title>Bmail</title>
+</head>
+<body>
+
+<div class="container-fluid">
+    <div class="row py-2 mt-3">
+        <h3 class="display-4 col-md-3 d-flex justify-content-md-start">Bmail</h3>
+<nav class="nav col-sm-12 col-md-9 d-flex justify-content-sm-start
+        text-sm-center">
+  <a class="nav-link active" href="/compose">Compose message</a>
+  <a class="nav-link" href="/inbox">Inbox</a>
+  <a class="nav-link" href="/outbox">Outbox</a>
+  <a class="nav-link" href="/weather">Weather</a>
+  <a class="nav-link" href="/">Logout</a>
+</nav>
+
+        </div>
+</div>
+
+
+    {% block page_content %}
+<div class="container-fluid">
+        {% if logged_in %}
+        <p>Hello, {{ registered_user.name }}!</p>
+        <p> <a href="{{ logout_url }}"> <button type="button" class="btn btn-primary">Logout </button> </a> </p>
+    {% else %}
+        <p> Welcome to Bmail! Please, login here:</p>
+
+        <p> <a href="{{ login_url }}">Login</a> </p>
+    {% endif %}
+    <img src="/assets/img/background.png" class="img-fluid py-4 pt-4">
+</div>
+    {% endblock page_content %}
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</body>
+</html>

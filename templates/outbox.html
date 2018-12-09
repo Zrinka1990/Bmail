@@ -1,0 +1,13 @@
+{% extends "index.html" %}
+
+{% block page_content %}
+<div class="container-fluid">
+    <h1 class="display-4">Outbox</h1>
+
+    {% for i in range(len_messages) %}
+        <p> <a href="{{ messages[i].key.id() }}/read"> {{ receiver_list[i].name }} </a>,
+            {{ messages[i].title }}, {{ messages[i].created }}</p>
+    {% endfor %}
+
+</div>
+{% endblock page_content %}
